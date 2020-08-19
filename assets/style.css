@@ -1,101 +1,122 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #011640;
-}
-​ h1 {
-  background-color: #011640;
-  color: #d9d9d9;
-  border-radius: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-h5 {
-  color: #d9d9d9;
-}
-/* .container {
-      width: 80%;
-      margin: auto;
-      overflow: hidden;
-      background: #d9d9d9;
-      text-align: center;
-  } */
-​ .head {
-  margin: auto;
-  text-align: center;
-}
-​ ​ header {
-  background-color: #011640;
-  padding: 5px;
-  font-size: 25px;
-  border-radius: 30px;
-}
-​ .search-btn {
-  height: 50px;
-  width: 150px;
-  background: #f29f80;
-  border: none;
-  outline: none;
-  color: #000;
-  font-size: 18px;
-  border-radius: 20px;
-}
-​ .search-btn:hover {
-  background: #bf533b;
-  cursor: pointer;
-}
-​ .form-box {
-  background: #113859;
-  padding: 30px;
-}
-​
-  /* .form-text {
-  } */
-  ​
-  .maps {
-  margin: 0 auto;
-  background: #f29f80;
-  height: 900px;
-  width: 1200px;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-​ .mapsCard {
-  padding: 16px;
-  height: 400px;
-  width: 350px;
-  width: 1000px;
-}
-​ .flow-text {
-  margin-bottom: 70px;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-align: center;
-}
-/* hiking scroll box */
-.portfolio-resume-overview {
-  height: 400px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  opacity: 1;
-  z-index: 0;
+.header {
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    width: 100%;
 }
 
-@media print, screen and (min-width: 40em) {
-  .portfolio-resume-scrolling {
+.content-wrapper img {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url(Night-Malaysia.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    width: 100%;
+}
+
+.text-wrapper {
+    width: 100%;
+    position: relative;
+    margin-top: -40%;
+}
+
+.text-wrapper h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 5vw;
+    font-family: "lobster", cursive;
+}
+
+.search-field {
+    height: 50px;
+    width: 400px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+.search-btn {
+    height: 50px;
+    width: 150px;
+    background: #f29f80;
+    border: none;
+    outline: none;
+    color: #000;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.search-btn:hover {
+    background: #bf533b;
+    cursor: pointer;
+}
+
+
+/* This is the css for the actual map to display in the screen inside de <div id=map>*/
+
+#map {
+    height: 45%;
+    width: 100%;
+}
+
+.sections {
+    margin: auto;
+    background: #f29f80;
+    height: 900px;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.sectionsCard {
+    padding: 16px;
     height: 400px;
-    overflow-y: auto;
-    width: 250px;
-  }
+    width: 1000px;
+}
+
+.flow-text {
+    margin-bottom: 70px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+
+/* hiking scroll box */
+
+.portfolio-resume-overview {
+    height: 400px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    opacity: 1;
+    z-index: 0;
+}
+
+@media print,
+screen and (min-width: 40em) {
+    .portfolio-resume-scrolling {
+        height: 400px;
+        overflow-y: auto;
+        width: 250px;
+    }
 }

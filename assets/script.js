@@ -1,3 +1,25 @@
+//Variables used in the map
+//let map, infoWindow;
+//let BingMapAPIkey = 'ApOpGVS9mrvMVrJLvz6YkesBOxk9zLXZXh3q2LL0jtwmYvoA19KW55nu9f7lMtZC';
+//Variables to grab user geolocation latitude and longitude
+/* let userLat, userLon;​ */
+//callback function to initializ the map object
+//var map = new Microsoft.sections.Map('#map');
+var map = L.map("map").setView([51.505, -0.09], 14);
+L.tileLayer(
+  "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+  {
+    attribution:
+      'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: "mapbox/streets-v11",
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken:
+      "pk.eyJ1Ijoiam9yZ2UtY2FsZGVyb24xIiwiYSI6ImNrZHpiN2l3azJqbzIydG55cHM3djhjMW0ifQ.GDahyKqMw0JTip33YyGVjw",
+  }
+).addTo(map);
+
 // hiking
 $(".hikingBtn").on("click", function () {
   let latEntry = $("input.latEntry").val();
@@ -16,13 +38,16 @@ $(".hikingBtn").on("click", function () {
       type: "GET",
       success: function (data) {
         console.log(data);
+
+        let trail1img = data.trails[0].imgSmall;
+        console.log(trail1img);
         // trail 1
         $(".t1name").text(data.trails[0].name);
         $(".t1difficulty").text(data.trails[0].difficulty);
         $(".t1rating").text(data.trails[0].stars);
         $(".t1location").text(data.trails[0].location);
         $(".t1length").text(data.trails[0].length);
-        $("t1img").attr("src", data.trails[0].imgSmall);
+        $("t1img").html("<img src=" + trail1img + "></img>");
         // trail 2
         $(".t2name").text(data.trails[1].name);
         $(".t2difficulty").text(data.trails[1].difficulty);
