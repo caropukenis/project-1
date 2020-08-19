@@ -1,4 +1,4 @@
-# Project 1
+# Project 1 - Day Planner App
 
 ![Website Tutorial](https://github.com/caropukenis/project-1/blob/master/assets/tutorial.gif?raw=true)
 
