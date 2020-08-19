@@ -318,6 +318,7 @@ function hikingTrailsCallByLatLng(lat, lng) {
 }
 
 // weather call by lat and lng
+// weather call by lat and lng
 function getWeatherByLatLng(latitude, longitude) {
   let urlqueryLatLng = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=1460cf8db2b228c70ad455e11901c547`;
   $.ajax({
@@ -325,12 +326,41 @@ function getWeatherByLatLng(latitude, longitude) {
     method: "GET",
   }).then(function (response) {
     $(".temp").text("Current Weather: " + response.weather[0].description);
-    $(".desc").text("temperature: " + response.main.temp);
-    $(".wind").text("Curret Windspeed: " + response.wind.speed);
-    $(".icon").attr(
-      "src",
-      `https://openweathermap.org/img/w/${response.weather[0].icon}.png`
+    $(".desc").text("temperature: " + Math.floor(response.main.temp));
+    $(".wind").text(
+      "Curret Windspeed: " + Math.floor(response.wind.speed) + "mph"
     );
+    var iconCode1 = response.weather[0].icon;
+    $(".icon").attr("src", function () {
+      if (iconCode1 == "01d") {
+        // full sun
+        $(".icon").addClass("fas fa-sun");
+      } else if (iconCode1 == "01n") {
+        // full moon
+        $(".icon").addClass("fas fa-moon");
+      } else if (iconCode1 == "02d") {
+        // overcast day
+        $(".icon").addClass("fas fa-cloud-sun");
+      } else if (iconCode1 == "02n") {
+        // overcast night
+        $(".icon").addClass("fas fa-cloud-moon");
+      } else if ((iconCode1 == "03d", "04d", "03n", "04n")) {
+        // full clouds
+        $(".icon").addClass("fas fa-cloud");
+      } else if ((iconCode1 == "09d", "10d")) {
+        // light rain day
+        $(".icon").addClass("fas fa-cloud-sun-rain");
+      } else if ((iconCode1 == "09n", "10n")) {
+        // light rain night
+        $(".icon").addClass("fas fa-cloud-moon-rain");
+      } else if ((iconCode1 == "11d", "11n")) {
+        // storming rain
+        $(".icon").addClass("fas fa-poo-storm");
+      } else if ((iconCode1 == "50d", "50n")) {
+        // foggy
+        $(".icon").addClass("fas fa-smog");
+      }
+    });
   });
 }
 
@@ -343,9 +373,36 @@ function getWeatherByDestination(city, state) {
     $(".temp").text("Current Weather: " + response.weather[0].description);
     $(".desc").text("Temperature: " + response.main.temp);
     $(".wind").text("Curret Windspeed: " + response.wind.speed);
-    $(".icon").attr(
-      "src",
-      `https://openweathermap.org/img/w/${response.weather[0].icon}.png`
-    );
+    var iconCode1 = response.weather[0].icon;
+    $(".icon").attr("src", function () {
+      if (iconCode1 == "01d") {
+        // full sun
+        $(".icon").addClass("fas fa-sun");
+      } else if (iconCode1 == "01n") {
+        // full moon
+        $(".icon").addClass("fas fa-moon");
+      } else if (iconCode1 == "02d") {
+        // overcast day
+        $(".icon").addClass("fas fa-cloud-sun");
+      } else if (iconCode1 == "02n") {
+        // overcast night
+        $(".icon").addClass("fas fa-cloud-moon");
+      } else if ((iconCode1 == "03d", "04d", "03n", "04n")) {
+        // full clouds
+        $(".icon").addClass("fas fa-cloud");
+      } else if ((iconCode1 == "09d", "10d")) {
+        // light rain day
+        $(".icon").addClass("fas fa-cloud-sun-rain");
+      } else if ((iconCode1 == "09n", "10n")) {
+        // light rain night
+        $(".icon").addClass("fas fa-cloud-moon-rain");
+      } else if ((iconCode1 == "11d", "11n")) {
+        // storming rain
+        $(".icon").addClass("fas fa-poo-storm");
+      } else if ((iconCode1 == "50d", "50n")) {
+        // foggy
+        $(".icon").addClass("fas fa-smog");
+      }
+    });
   });
 }
