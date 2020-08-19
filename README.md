@@ -1,6 +1,6 @@
 # Project 1
 
-![Will be .gif of website once working](https://github.com/caropukenis/project-1/blob/master/assets/honeydew.png?raw=true)
+![Website Tutorial](https://github.com/caropukenis/project-1/blob/master/assets/tutorial.gif?raw=true)
 
 [Website Link](https://caropukenis.github.io/project-1/)
 
