@@ -4,8 +4,6 @@
 
 [Website Link](https://caropukenis.github.io/project-1/)
 
-[Project 1 Distribution Doc](https://docs.google.com/document/d/1CCYAeF27QUyxrQqBTAXs6bHndoxuQcyzrcFDQe-ONII/edit)
-
 [Project 1 Initial Presentation](https://docs.google.com/presentation/d/15fWQxNH_xwaA6FMyiJC9--KeFYIMj47rl4ZrrB779kU/edit?usp=sharing)
 
 [Project 1 Final Presentation](https://docs.google.com/presentation/d/1is0evU1E2aNyx8VhjWFkZaB0Qc9CzWLkPTYOrda1X-I/edit?usp=sharing)
